@@ -156,7 +156,7 @@ st.write("Your Age is: ", age)
 
 
 ##background data##
-s = pd.read_csv(r"https://github.com/jjw111/my_first_app/blob/main/social_media_usage.csv")
+s = pd.read_csv(r"social_media_usage.csv")
 
 def clean_sm(x):
     
