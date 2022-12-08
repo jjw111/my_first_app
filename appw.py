@@ -247,7 +247,7 @@ fig = go.Figure(go.Indicator(
     gauge = {"axis": {"range": [0, 100]},
             "steps": [
                 {"range": [0, 49], "color":"white"},
-                {"range": [ 5, 100], "color":"lightblue"}
+                {"range": [ 50, 100], "color":"lightblue"}
             ],
             "bar":{"color":"black"}}
 ))
