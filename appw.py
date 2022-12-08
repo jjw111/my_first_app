@@ -24,7 +24,7 @@ st.title('Are you a LinkedIn User?')
 incom = st.selectbox("Gross Household Income level", 
              options = ["Less than $10,000",
                         " 10k to under $20,000",
-                        " $20k to under $30,000",
+                        "$20k to under $30,000",
                         " $30k to under $40,000",
                         " $40k to under $50,000",
                         " $50k to under $75,000",
