@@ -221,13 +221,21 @@ probs = (lr.predict_proba(persons))[0][1]
 
 st.markdown(f"Probability of being a LinkedIn User: **{probs*100 }%**")
 
-if probs > .5:
+if probs >= .8:
 
-    isit = "YES"
+    isit = "Highly Likely"
+
+elif probs > .7:
+
+    isit = "Very Likely"
+
+elif probs > .5:
+
+    isit = "Likely"
 
 else:
     
-    isit = "NO"
+    isit = "Unlikely"
 
 fig = go.Figure(go.Indicator(
     mode = "gauge+number",
