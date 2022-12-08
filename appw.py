@@ -242,7 +242,7 @@ else:
 
 fig = go.Figure(go.Indicator(
     mode = "gauge+number",
-    value = probs,
+    value = {(probs)*100}%,
     title = {'text': f"LinkedIn User? {isit}"},
     gauge = {"axis": {"range": [0, 1]},
             "steps": [
