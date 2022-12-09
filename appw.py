@@ -101,7 +101,7 @@ elif incom == "100k to $150,000":
     incom= 8
 else:
     incom = 9
-st.write(f"Income (post-conversion): {incom}")
+#st.write(f"Income (post-conversion): {incom}")
 ###INCOME#####
 
 
@@ -136,7 +136,7 @@ elif educ == "Some Postgraduate or Professional Schooling, No Degree":
     educ = 7
 else:
     educ= 8
-st.write(f"Education (post-conversion): {educ}")
+#st.write(f"Education (post-conversion): {educ}")
 ###EDUCATION####
 
 ##parent##
@@ -168,7 +168,7 @@ if ring == "Yes":
    ring = 1
 else:
     ring = 0
-st.write(f"Marital Status (post-conversion): {ring}")
+#st.write(f"Marital Status (post-conversion): {ring}")
 ##Married##
 
 ##gender##
@@ -184,7 +184,7 @@ if gend == "Female":
    gend = 1
 else:
     gend = 0
-st.write(f"Gender (post-conversion): {gend}")
+#st.write(f"Gender (post-conversion): {gend}")
 ##gender##
 
 
