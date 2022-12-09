@@ -216,7 +216,7 @@ persons = pd.DataFrame({
     "age":[age]
 })
 
-probs = lr.predict_proba([persons])
+probs = lr.predict_proba(persons)
 
 
 
