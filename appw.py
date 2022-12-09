@@ -218,7 +218,7 @@ probs = lr.predict_proba(persons)[0][1]
 
 probs = round(probs*100,2)
 
-st.markdown(f"Probability of being a LinkedIn User: **{probs*100 }%**")
+st.markdown(f"Probability of being a LinkedIn User: **{probs }%**")
 
 if probs >= .8:
 
@@ -238,7 +238,7 @@ else:
 
 fig = go.Figure(go.Indicator(
     mode = "gauge+number",
-    value = probs*100,
+    value = probs,
     title = {'text': f"LinkedIn User? {isit}"},
     gauge = {"axis": {"range": [0, 100]},
             "steps": [
