@@ -201,7 +201,7 @@ st.write("Your Age is: ", age)
 
 persons = pd.DataFrame({
             
-    "income": [6],
+    "income": [incom],
     
     "education":[6],
     
