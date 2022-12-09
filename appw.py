@@ -89,7 +89,7 @@ elif educ == "Some Postgraduate or Professional Schooling, No Degree":
     educ = 7
 else:
     educ= 8
-#st.write(f"Education (post-conversion): {educ}")
+st.write(f"Education (post-conversion): {educ}")
 ###EDUCATION####
 
 ##parent##
@@ -99,13 +99,13 @@ kid = st.selectbox("Parental Status",
                          ])
 st.write(f"Parental Status selected: {kid}")
 
-#st.write("**Convert Selection to Numeric Value**")
+st.write("**Convert Selection to Numeric Value**")
 
 if kid == "Yes":
    kid = 1
 else:
     kid = 0
-#st.write(f"Parental Status (post-conversion): {kid}")
+st.write(f"Parental Status (post-conversion): {kid}")
 ##parent##
 
 ##Married##
@@ -115,7 +115,7 @@ ring = st.selectbox("Marital Status",
                          ])
 st.write(f"Marital Status selected: {ring}")
 
-#st.write("**Convert Selection to Numeric Value**")
+st.write("**Convert Selection to Numeric Value**")
 
 if ring == "Yes":
    ring = 1
@@ -131,13 +131,13 @@ gend = st.selectbox("Gender",
                          ])
 st.write(f"Gender selected: {gend}")
 
-#st.write("**Convert Selection to Numeric Value**")
+st.write("**Convert Selection to Numeric Value**")
 
 if gend == "Female":
    gend = 1
 else:
     gend = 0
-#st.write(f"Gender (post-conversion): {gend}")
+st.write(f"Gender (post-conversion): {gend}")
 ##gender##
 
 
