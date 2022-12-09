@@ -186,7 +186,6 @@ y = ss["sm_li"]
 
 x = ss[["income", "education", "parent", "married", "female", "age"]]
 
-
 x_train, x_test, y_train, y_test = train_test_split(x,
                                                     y,
                                                     stratify=y,      # same number of target in training & test set
@@ -223,33 +222,33 @@ probs = lr.predict_proba([persons])
 
 st.markdown(f"Probability of being a LinkedIn User: **{probs*100 }%**")
 
-if probs[0][1] >= .8:
+#if probs[0][1] >= .8:
 
-    isit = "Highly Likely"
+    #isit = "Highly Likely"
 
-elif probs[0][1] > .7:
+#elif probs[0][1] > .7:
 
-    isit = "Very Likely"
+   # isit = "Very Likely"
 
-elif probs[0][1] > .5:
+#elif probs[0][1] > .5:
 
-    isit = "Likely"
+   # isit = "Likely"
 
-else:
+#else:
     
-    isit = "Unlikely"
+   # isit = "Unlikely"
 
-fig = go.Figure(go.Indicator(
-    mode = "gauge+number",
-    value = probs[0][1],
-    title = {'text': f"LinkedIn User? {isit}"},
-    gauge = {"axis": {"range": [0, 100]},
-            "steps": [
-                {"range": [0, 49], "color":"white"},
-                {"range": [ 50, 100], "color":"lightblue"}
-            ],
-            "bar":{"color":"black"}}
-))
+#fig = go.Figure(go.Indicator(
+    #mode = "gauge+number",
+    #value = probs[0][1],
+    #title = {'text': f"LinkedIn User? {isit}"},
+    #gauge = {"axis": {"range": [0, 100]},
+         #   "steps": [
+           #     {"range": [0, 49], "color":"white"},
+          #      {"range": [ 50, 100], "color":"lightblue"}
+         #   ],
+           # "bar":{"color":"black"}}
+#))#
 
-st.plotly_chart(fig)
+#st.plotly_chart(fig)
 
