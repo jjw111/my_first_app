@@ -81,7 +81,7 @@ incom = st.selectbox("Gross Household Income level",
                          ])
 st.write(f"Income selected: {incom}")
 
-#st.write("**Convert Selection to Numeric Value**")
+st.write("**Convert Selection to Numeric Value**")
 
 if incom == "Less than $10,000":
    incom = 1
@@ -201,17 +201,17 @@ st.write("Your Age is: ", age)
 
 persons = pd.DataFrame({
             
-    "income": [incom],
+    "income": [6],
     
-    "education":[educ],
+    "education":[6],
     
-    "parent":[kid],
+    "parent":[0],
     
-    "married": [ring],
+    "married": [0],
     
-    "female": [gend],
+    "female": [1],
     
-    "age":[age]
+    "age":[25]
 })
 
 probs = lr.predict_proba(persons)[0][1]
