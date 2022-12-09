@@ -203,15 +203,15 @@ persons = pd.DataFrame({
             
     "income": [incom],
     
-    "education":[6],
+    "education":[educ],
     
-    "parent":[0],
+    "parent":[kid],
     
-    "married": [0],
+    "married": [ring],
     
-    "female": [1],
+    "female": [gend],
     
-    "age":[25]
+    "age":[age]
 })
 
 probs = lr.predict_proba(persons)[0][1]
