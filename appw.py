@@ -9,15 +9,12 @@ from sklearn.metrics import classification_report
 import plotly.graph_objects as go
 from PIL import Image
 
-
-
 ##background data##
 s = pd.read_csv(r"social_media_usage.csv")
 
 def clean_sm(x):
     
     print(np.where(x == 1, 1, 0))
-    
 
 
 ss = pd.DataFrame({
@@ -56,27 +53,6 @@ lr = LogisticRegression(class_weight='balanced')
 lr.fit(x_train, y_train)
 
 y_pred = lr.predict(x_test)
-
-persons = pd.DataFrame({
-            
-    "income": [incom],
-    
-    "education":[educ],
-    
-    "parent":[kid],
-    
-    "married": [ring],
-    
-    "female": [gend],
-    
-    "age":[age]
-})
-
-probs = lr.predict_proba(persons)[0][1]
-
-
-
-
 
 
 
@@ -223,7 +199,22 @@ st.write("Your Age is: ", age)
 #age#
 
 
+persons = pd.DataFrame({
+            
+    "income": [incom],
+    
+    "education":[educ],
+    
+    "parent":[kid],
+    
+    "married": [ring],
+    
+    "female": [gend],
+    
+    "age":[age]
+})
 
+probs = lr.predict_proba(persons)[0][1]
 
 
 st.markdown(f"Probability of being a LinkedIn User: **{probs*100 }%**")
