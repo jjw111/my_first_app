@@ -216,9 +216,9 @@ persons = pd.DataFrame({
 
 probs = lr.predict_proba(persons)[0][1]
 
-probs = round(probs*100,2)
+probs = round(probs*100,1)
 
-st.markdown(f"Probability of being a LinkedIn User: **{probs }%**")
+st.markdown(f"Probability of being a LinkedIn User: **{probs}%**")
 
 if probs >= .8:
 
