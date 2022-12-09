@@ -219,7 +219,6 @@ persons = pd.DataFrame({
 
 probs = (lr.predict_proba(persons))[0][1]
 
-probs =(round(probs))
 
 
 st.markdown(f"Probability of being a LinkedIn User: **{probs*100 }%**")
