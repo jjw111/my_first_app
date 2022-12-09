@@ -91,11 +91,11 @@ elif incom == "20k to $30,000":
      incom = 3
 elif incom == "30k to $40,000":
     incom = 4
-elif incom == "40k to  $50,000":
+elif incom == "40k to $50,000":
     incom = 5
 elif incom == "50k to $75,000":
     incom = 6
-elif incom == "75k to  $100,000":
+elif incom == "75k to $100,000":
     incom = 7
 elif incom == "100k to $150,000":
     incom= 8
