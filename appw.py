@@ -9,6 +9,77 @@ from sklearn.metrics import classification_report
 import plotly.graph_objects as go
 from PIL import Image
 
+
+
+##background data##
+s = pd.read_csv(r"social_media_usage.csv")
+
+def clean_sm(x):
+    
+    print(np.where(x == 1, 1, 0))
+    
+
+
+ss = pd.DataFrame({
+    
+    "sm_li":np.where(s["web1h"] == 1, 1, 0),
+    
+    "income":np.where(s["income"] > 9,np.nan,s["income"]),
+    
+    "education":np.where(s["educ2"]> 8,np.nan,s["educ2"]),
+    
+    "parent":np.where(s["par"] == 1,1,0),
+    
+    "married": np.where(s["marital"] ==1,1,0),
+    
+    "female": np.where(s["gender"] ==2,1,0),
+    
+    "age":np.where(s["age"] >98, np.nan,s["age"])})
+
+ss = ss.dropna()
+
+y = ss["sm_li"]
+
+x = ss[["income", "education", "parent", "married", "female", "age"]]
+
+x_train, x_test, y_train, y_test = train_test_split(x,
+                                                    y,
+                                                    stratify=y,      # same number of target in training & test set
+                                                  
+                                                    test_size=0.2, # hold out 20% of data for testing
+                                                    
+                                                    random_state=153)  # set for reproducibility
+
+
+lr = LogisticRegression(class_weight='balanced')
+
+lr.fit(x_train, y_train)
+
+y_pred = lr.predict(x_test)
+
+persons = pd.DataFrame({
+            
+    "income": [incom],
+    
+    "education":[educ],
+    
+    "parent":[kid],
+    
+    "married": [ring],
+    
+    "female": [gend],
+    
+    "age":[age]
+})
+
+probs = lr.predict_proba(persons)[0][1]
+
+
+
+
+
+
+
 st.title('Using Machine Learning to Drive the Future ')
 st.caption('Coded by: Joshua Winter for MSBA OPIM-607 ')
 
@@ -152,71 +223,6 @@ st.write("Your Age is: ", age)
 #age#
 
 
-
-
-
-##background data##
-s = pd.read_csv(r"social_media_usage.csv")
-
-def clean_sm(x):
-    
-    print(np.where(x == 1, 1, 0))
-    
-
-
-ss = pd.DataFrame({
-    
-    "sm_li":np.where(s["web1h"] == 1, 1, 0),
-    
-    "income":np.where(s["income"] > 9,np.nan,s["income"]),
-    
-    "education":np.where(s["educ2"]> 8,np.nan,s["educ2"]),
-    
-    "parent":np.where(s["par"] == 1,1,0),
-    
-    "married": np.where(s["marital"] ==1,1,0),
-    
-    "female": np.where(s["gender"] ==2,1,0),
-    
-    "age":np.where(s["age"] >98, np.nan,s["age"])})
-
-ss = ss.dropna()
-
-y = ss["sm_li"]
-
-x = ss[["income", "education", "parent", "married", "female", "age"]]
-
-x_train, x_test, y_train, y_test = train_test_split(x,
-                                                    y,
-                                                    stratify=y,      # same number of target in training & test set
-                                                  
-                                                    test_size=0.2, # hold out 20% of data for testing
-                                                    
-                                                    random_state=153)  # set for reproducibility
-
-
-lr = LogisticRegression(class_weight='balanced')
-
-lr.fit(x_train, y_train)
-
-y_pred = lr.predict(x_test)
-
-persons = pd.DataFrame({
-            
-    "income": [incom],
-    
-    "education":[educ],
-    
-    "parent":[kid],
-    
-    "married": [ring],
-    
-    "female": [gend],
-    
-    "age":[age]
-})
-
-probs = lr.predict_proba(persons)
 
 
 
