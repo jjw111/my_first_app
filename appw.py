@@ -219,15 +219,15 @@ probs = lr.predict_proba(persons)[0][1]
 
 st.markdown(f"Probability of being a LinkedIn User: **{probs*100 }%**")
 
-if probs[0][1] >= .8:
+if probs >= .8:
 
     isit = "Highly Likely"
 
-elif probs[0][1] > .7:
+elif probs> .7:
 
     isit = "Very Likely"
 
-elif probs[0][1] > .5:
+elif probs> .5:
 
     isit = "Likely"
 
