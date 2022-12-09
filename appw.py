@@ -101,7 +101,7 @@ elif incom == "100k to $150,000":
     incom= 8
 else:
     incom = 9
-#st.write(f"Income (post-conversion): {incom}")
+st.write(f"Income (post-conversion): {incom}")
 ###INCOME#####
 
 
