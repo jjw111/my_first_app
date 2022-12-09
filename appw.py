@@ -250,3 +250,4 @@ fig = go.Figure(go.Indicator(
 
 st.plotly_chart(fig)
 
+ 
