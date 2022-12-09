@@ -81,7 +81,7 @@ incom = st.selectbox("Gross Household Income level",
                          ])
 st.write(f"Income selected: {incom}")
 
-st.write("**Convert Selection to Numeric Value**")
+#st.write("**Convert Selection to Numeric Value**")
 
 if incom == "Less than $10,000":
    incom = 1
@@ -146,7 +146,7 @@ kid = st.selectbox("Parental Status",
                          ])
 st.write(f"Parental Status selected: {kid}")
 
-st.write("**Convert Selection to Numeric Value**")
+#st.write("**Convert Selection to Numeric Value**")
 
 if kid == "Yes":
    kid = 1
@@ -162,13 +162,13 @@ ring = st.selectbox("Marital Status",
                          ])
 st.write(f"Marital Status selected: {ring}")
 
-st.write("**Convert Selection to Numeric Value**")
+#st.write("**Convert Selection to Numeric Value**")
 
 if ring == "Yes":
    ring = 1
 else:
     ring = 0
-#st.write(f"Marital Status (post-conversion): {ring}")
+st.write(f"Marital Status (post-conversion): {ring}")
 ##Married##
 
 ##gender##
@@ -178,7 +178,7 @@ gend = st.selectbox("Gender",
                          ])
 st.write(f"Gender selected: {gend}")
 
-st.write("**Convert Selection to Numeric Value**")
+#st.write("**Convert Selection to Numeric Value**")
 
 if gend == "Female":
    gend = 1
