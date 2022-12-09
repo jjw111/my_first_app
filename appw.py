@@ -152,7 +152,7 @@ if kid == "Yes":
    kid = 1
 else:
     kid = 0
-st.write(f"Parental Status (post-conversion): {kid}")
+#st.write(f"Parental Status (post-conversion): {kid}")
 ##parent##
 
 ##Married##
