@@ -220,15 +220,15 @@ probs = round(probs*100,1)
 
 st.markdown(f"Probability of being a LinkedIn User: **{probs}%**")
 
-if probs >= .8:
+if probs >= 80:
 
     isit = "Highly Likely"
 
-elif probs> .7:
+elif probs> 70:
 
     isit = "Very Likely"
 
-elif probs> .5:
+elif probs> 50:
 
     isit = "Likely"
 
