@@ -23,14 +23,14 @@ st.title('Are you a LinkedIn User?')
 ###INCOME#####
 incom = st.selectbox("Gross Household Income level", 
              options = ["Less than $10,000",
-                        " 10k to $20,000",
-                        " 20k to $30,000",
-                        " 30k to $40,000",
-                        " 40k to $50,000",
-                        " 50k to $75,000",
-                        " 75k to $100,000",
-                        " 100k to $150,000",
-                        " $150k or more?"
+                        "10k to $20,000",
+                        "20k to $30,000",
+                        "30k to $40,000",
+                        "40k to $50,000",
+                        "50k to $75,000",
+                        "75k to $100,000",
+                        "100k to $150,000",
+                        "$150k or more?"
                          ])
 st.write(f"Income selected: {incom}")
 
@@ -38,19 +38,19 @@ st.write(f"Income selected: {incom}")
 
 if incom == "Less than $10,000":
    incom = 1
-elif incom == "10,000 to under $20,000":
+elif incom == "10k to under $20,000":
     incom = 2
-elif incom == "20,000 to under $30,000":
+elif incom == "20k to under $30,000":
      incom = 3
-elif incom == "30,000 to under $40,000":
+elif incom == "30k to under $40,000":
     incom = 4
-elif incom == "40,000 to under $50,000":
+elif incom == "40k to under $50,000":
     incom = 5
-elif incom == "50,000 to under $75,000":
+elif incom == "50k to under $75,000":
     incom = 6
-elif incom == "75,000 to under $100,000":
+elif incom == "75k to under $100,000":
     incom = 7
-elif incom == "100,000 to under $150,000":
+elif incom == "100k to under $150,000":
     incom= 8
 else:
     incom = 9
