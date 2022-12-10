@@ -12,11 +12,11 @@ from PIL import Image
 ##background data##
 s = pd.read_csv(r"social_media_usage.csv")
 
+##for prob##
 def clean_sm(x):
     
     print(np.where(x == 1, 1, 0))
-
-
+##new DF##
 ss = pd.DataFrame({
     
     "sm_li":np.where(s["web1h"] == 1, 1, 0),
@@ -32,9 +32,9 @@ ss = pd.DataFrame({
     "female": np.where(s["gender"] ==2,1,0),
     
     "age":np.where(s["age"] >98, np.nan,s["age"])})
-
+##get rid of nas
 ss = ss.dropna()
-
+##set up training
 y = ss["sm_li"]
 
 x = ss[["income", "education", "parent", "married", "female", "age"]]
@@ -47,7 +47,7 @@ x_train, x_test, y_train, y_test = train_test_split(x,
                                                     
                                                     random_state=153)  # set for reproducibility
 
-
+##create LR
 lr = LogisticRegression(class_weight='balanced')
 
 lr.fit(x_train, y_train)
@@ -55,7 +55,8 @@ lr.fit(x_train, y_train)
 y_pred = lr.predict(x_test)
 
 
-
+##App
+#Titles
 st.title('Using Machine Learning to Drive the Future ')
 st.caption('Coded by: Joshua Winter for MSBA OPIM-607 ')
 
@@ -80,7 +81,7 @@ incom = st.selectbox("Gross Household Income level",
                         "$150k or more?"
                          ])
 st.write(f"Income selected: {incom}")
-
+##check debugging if issues arise
 #st.write("**Convert Selection to Numeric Value**")
 
 if incom == "Less than $10,000":
@@ -101,6 +102,7 @@ elif incom == "100k to $150,000":
     incom= 8
 else:
     incom = 9
+##check debugging if issues arise
 #st.write(f"Income (post-conversion): {incom}")
 ###INCOME#####
 
@@ -117,7 +119,7 @@ educ = st.selectbox("Education level",
                         "PostGraduate or Professional Degree"
                          ])
 st.write(f"Education selected: {educ}")
-
+##check debugging if issues arise
 #st.write("**Convert Selection to Numeric Value**")
 
 if educ == "Less than High School":
@@ -136,6 +138,7 @@ elif educ == "Some Postgraduate or Professional Schooling, No Degree":
     educ = 7
 else:
     educ= 8
+##check debugging if issues arise
 #st.write(f"Education (post-conversion): {educ}")
 ###EDUCATION####
 
@@ -145,13 +148,14 @@ kid = st.selectbox("Parental Status",
                         "No",
                          ])
 st.write(f"Parental Status selected: {kid}")
-
+##check debugging if issues arise
 #st.write("**Convert Selection to Numeric Value**")
 
 if kid == "Yes":
    kid = 1
 else:
     kid = 0
+##check debugging if issues arise
 #st.write(f"Parental Status (post-conversion): {kid}")
 ##parent##
 
@@ -161,13 +165,14 @@ ring = st.selectbox("Marital Status",
                         "No",
                          ])
 st.write(f"Marital Status selected: {ring}")
-
+##check debugging if issues arise
 #st.write("**Convert Selection to Numeric Value**")
 
 if ring == "Yes":
    ring = 1
 else:
     ring = 0
+##check debugging if issues arise
 #st.write(f"Marital Status (post-conversion): {ring}")
 ##Married##
 
@@ -177,13 +182,14 @@ gend = st.selectbox("Gender",
                         "Female",
                          ])
 st.write(f"Gender selected: {gend}")
-
+##check debugging if issues arise
 #st.write("**Convert Selection to Numeric Value**")
 
 if gend == "Female":
    gend = 1
 else:
     gend = 0
+##check debugging if issues arise
 #st.write(f"Gender (post-conversion): {gend}")
 ##gender##
 
@@ -198,7 +204,7 @@ age= st.number_input('Enter Your Age',
 st.write("Your Age is: ", age)
 #age#
 
-
+##persons input
 persons = pd.DataFrame({
             
     "income": [incom],
@@ -213,11 +219,11 @@ persons = pd.DataFrame({
     
     "age":[age]
 })
-
+##probability formula
 probs = lr.predict_proba(persons)[0][1]
 
 probs = round(probs*100,1)
-
+##probability display
 st.markdown(f"Probability of being a LinkedIn User: **{probs}%**")
 
 if probs >= 80:
@@ -235,7 +241,7 @@ elif probs> 50:
 else:
     
     isit = "Unlikely"
-
+##Dr Lyon's gauge
 fig = go.Figure(go.Indicator(
     mode = "gauge+number",
     value = probs,
